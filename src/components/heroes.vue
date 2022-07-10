@@ -30,19 +30,20 @@
                 {{ selectedHero.id }}
               </label>
             </div>
-            <div class="field">
+            <div id="firstNameField" class="field">
               <label class="label" for="firstName">first name</label>
               <input class="input" id="firstName" v-model="selectedHero.firstName"/>
             </div>
-            <div class="field">
-              <label class="label" for="lastName">last name</label>
-              <input
-                  class="input"
-                  id="lastName"
-                  v-model="selectedHero.lastName"
-              />
+            <div id="showMoreField" class="field">
+              <label for="show" class="checkbox">show more
+                <input type="checkbox" class="is-primary" id="show" v-model="showMore"/>
+              </label>
             </div>
-            <div class="field">
+            <div id="lastNameField" class="field" v-show="showMore">
+              <label class="label" for="lastName">last name</label>
+              <input class="input" id="lastName" v-model="selectedHero.lastName"/>
+            </div>
+            <div id="descriptionField" class="field" v-show="showMore">
               <label class="label" for="description">description</label>
               <input
                   class="input"
@@ -63,6 +64,7 @@ export default {
   data() {
     return {
       selectedHero: undefined,
+      showMore: false,
       heroes: [
         {
           id: 10,
