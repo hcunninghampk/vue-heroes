@@ -1,14 +1,15 @@
+<!-- eslint-disable-next-line -->
 <template>
   <div class="navbar-menu">
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
           <a v-bind:href="github" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+            <i class="fab fa-github fa-2x" aria-hidden="false"></i>
           </a>
 <!--  The :, colon, here is short for v-bind -->
           <a :href="twitter" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
+            <i class="fab fa-twitter fa-2x" aria-hidden="false"></i>
           </a>
         </div>
       </div>
