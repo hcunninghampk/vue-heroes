@@ -7,38 +7,38 @@
       <div class="column is-8">
         <div class="card edit-detail">
           <header class="card-header">
-            <p class="card-header-title"></p>
+            <p class="card-header-title">{{ hero.firstName }}</p>
           </header>
           <div class="card-content">
             <div class="content">
               <div class="field">
                 <label class="label" for="id">id</label>
-                <label class="input" id="id" readonly></label>
+                <label class="input" id="id" readonly>{{ hero.id }}</label>
               </div>
               <div class="field">
                 <label class="label" for="firstName">first name</label>
-                <input class="input" id="firstName" />
+                <input class="input" id="firstName"/>
               </div>
               <div class="field">
                 <label class="label" for="lastName">last name</label>
-                <input class="input" id="lastName" />
+                <input class="input" id="lastName"/>
               </div>
               <div class="field">
                 <label class="label" for="description">description</label>
-                <textarea class="input" id="description" type="text" />
+                <textarea class="input" id="description" type="text"/>
               </div>
               <div class="field">
                 <label class="label">cape color</label>
                 <label class="radio" for="color-red">
-                  <input type="radio" id="color-red" value="red" />
+                  <input type="radio" id="color-red" value="red"/>
                   red
                 </label>
                 <label class="radio" for="color-blue">
-                  <input type="radio" id="color-blue" value="blue" />
+                  <input type="radio" id="color-blue" value="blue"/>
                   blue
                 </label>
                 <label class="radio" for="color-green">
-                  <input type="radio" id="color-green" value="green" />
+                  <input type="radio" id="color-green" value="green"/>
                   green
                 </label>
                 <div class="color-line"></div>
@@ -60,7 +60,7 @@
               <div class="field">
                 <label class="checkbox" for="active">
                   active
-                  <input type="checkbox" class="is-primary" id="active" />
+                  <input type="checkbox" class="is-primary" id="active"/>
                 </label>
               </div>
             </div>
@@ -76,7 +76,7 @@
             </button>
           </footer>
         </div>
-        <div class="notification is-info"></div>
+        <div class="notification is-info">{{ message }}</div>
       </div>
     </div>
   </div>
@@ -85,5 +85,19 @@
 <script>
 export default {
   name: 'Heroes',
+  data() {
+    return {
+      hero: {
+        id: 20,
+        firstName: 'Madelyn',
+        lastName: 'Papa',
+        description: 'cat whisperer',
+        capeColor: '',
+        power: 'cat whisperer',
+        active: 'true'
+      },
+      message: "Hero's message goes here",
+    }
+  },
 };
 </script>
